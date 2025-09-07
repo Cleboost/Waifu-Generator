@@ -1,6 +1,6 @@
 # Maintainer: cleboost <your-email@example.com>
 pkgname=waifu-generator
-pkgver=0.1.0-beta1
+pkgver=0.1.0
 pkgrel=1
 pkgdesc="A GTK 4 application developed in Rust for generating waifus"
 arch=('x86_64')
