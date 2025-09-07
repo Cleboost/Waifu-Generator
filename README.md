@@ -1,88 +1,95 @@
 # Waifu Generator
 
-Une application GTK 4 développée en Rust pour générer des waifus.
+A GTK 4 application developed in Rust for generating waifus.
 
-## Prérequis
+## Prerequisites
 
-### Installation des dépendances système
+### System Dependencies Installation
 
-Sur Arch Linux (CachyOS) :
+On Arch Linux (CachyOS):
 ```bash
 sudo pacman -S gtk4 libadwaita
 ```
 
-Sur Ubuntu/Debian :
+On Ubuntu/Debian:
 ```bash
 sudo apt install libgtk-4-dev libadwaita-1-dev
 ```
 
-Sur Fedora :
+On Fedora:
 ```bash
 sudo dnf install gtk4-devel libadwaita-devel
 ```
 
-### Installation de Rust
+### Rust Installation
 
-Si Rust n'est pas encore installé :
+If Rust is not yet installed:
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source ~/.cargo/env
 ```
 
-## Compilation et exécution
+## Compilation and Execution
 
 ```bash
-# Compiler le projet
+# Compile the project
 cargo build
 
-# Exécuter en mode debug
+# Run in debug mode
 cargo run
 
-# Compiler en mode release
+# Compile in release mode
 cargo build --release
 
-# Exécuter la version optimisée
+# Run the optimized version
 cargo run --release
 ```
 
-## Structure du projet
+## Project Structure
 
 ```
 src/
-├── main.rs                 # Point d'entrée de l'application
-├── models/                 # Structures de données
+├── main.rs                 # Application entry point
+├── models/                 # Data structures
 │   └── mod.rs             # WaifuTags, UserSettings
-├── services/              # Services externes
-│   └── mod.rs             # API calls (waifu.im)
-└── ui/                    # Interface utilisateur
-    ├── mod.rs             # Module UI principal
-    ├── main_window.rs     # Fenêtre principale
-    └── settings_window.rs # Fenêtre de paramètres
+├── services/              # External services
+│   └── mod.rs             # API calls (waifu.pics)
+└── ui/                    # User interface
+    ├── mod.rs             # Main UI module
+    ├── main_window.rs     # Main window
+    └── settings_window.rs # Settings window
 ```
 
-### Organisation modulaire
+### Modular Organization
 
-- **`models/`** - Structures de données et modèles
-- **`services/`** - Services externes (API, base de données)
-- **`ui/`** - Interface utilisateur (fenêtres, composants)
-- **`main.rs`** - Point d'entrée simplifié
+- **`models/`** - Data structures and models
+- **`services/`** - External services (API, database)
+- **`ui/`** - User interface (windows, components)
+- **`main.rs`** - Simplified entry point
 
-## Dépendances
+## Dependencies
 
-- **gtk4** - Bindings Rust pour GTK 4
-- **gio** - Bindings pour GIO (utilitaires système GNOME)
-- **glib** - Bindings pour GLib (bibliothèque de base GNOME)
+- **gtk4** - Rust bindings for GTK 4
+- **gio** - Bindings for GIO (GNOME system utilities)
+- **glib** - Bindings for GLib (GNOME base library)
+- **reqwest** - HTTP client for API calls
+- **serde** - Serialization/deserialization
+- **tokio** - Async runtime
 
-## Développement
+## Development
 
-L'application utilise GTK 4 avec les bindings officiels gtk-rs. Pour plus d'informations sur le développement GTK avec Rust, consultez :
+The application uses GTK 4 with the official gtk-rs bindings. For more information on GTK development with Rust, see:
 
-- [Documentation gtk-rs](https://gtk-rs.org/)
-- [Livre GTK 4 avec Rust](https://gtk-rs.org/gtk4-rs/stable/latest/book/)
-- [Documentation GTK 4](https://gtk-rs.org/gtk4-rs/stable/latest/docs/gtk4/)
+- [gtk-rs Documentation](https://gtk-rs.org/)
+- [GTK 4 Book with Rust](https://gtk-rs.org/gtk4-rs/stable/latest/book/)
+- [GTK 4 Documentation](https://gtk-rs.org/gtk4-rs/stable/latest/docs/gtk4/)
 
-## Fonctionnalités
+## Features
 
-- Interface utilisateur moderne avec GTK 4
-- Bouton de génération de waifu (à implémenter)
-- Design responsive et accessible
+- Modern user interface with GTK 4
+- Waifu image generation from waifu.pics API
+- Category selection (SFW/NSFW)
+- Image navigation (previous/next)
+- Image download functionality
+- Settings persistence
+- Responsive and accessible design
