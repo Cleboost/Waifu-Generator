@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-gtk4 = "0.8"
+gtk4 = "0.10"
 gio = "0.21"
 glib = "0.19"
 reqwest = { version = "0.12", features = ["json", "blocking"] }
